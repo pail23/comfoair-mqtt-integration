@@ -3,7 +3,7 @@
         "step": {
             "user": {
                 "title": "Comfoair",
-                "description": "You have successfully added the Comfoair MQTT device."
+                "description": "You have successfully added the Comfoair device."
             }
         },
 
@@ -13,7 +13,7 @@
     },
     "issues": {
         "replace_filters": {
-            "description": "Bitte wechsle die Filter in deinem Comfoair.",
+            "description": "Bitte wechsle die Filter in deinem Comfoair Gerät.",
             "title": "Comfoair Filterwechsel ist notwendig."
         }
     }

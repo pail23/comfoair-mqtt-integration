@@ -10,6 +10,7 @@ from homeassistant.components.sensor import (
 )
 from homeassistant.components.binary_sensor import BinarySensorEntityDescription
 from homeassistant.components.number import NumberEntityDescription
+from homeassistant.components.climate import ClimateEntityDescription
 
 # Base component constants
 NAME = "Comfoair MQTT"
@@ -28,7 +29,7 @@ SUBSCRIBE_TOPIC = TOPIC + "#"
 # Icons
 ICON = "mdi:format-quote-close"
 
-PLATFORMS = [Platform.SENSOR, Platform.BINARY_SENSOR, Platform.NUMBER]
+PLATFORMS = [Platform.SENSOR, Platform.BINARY_SENSOR, Platform.NUMBER, Platform.CLIMATE]
 
 
 # Configuration and options
@@ -38,6 +39,11 @@ CONF_ENABLED = "enabled"
 # Defaults
 DEFAULT_NAME = DOMAIN
 
+
+INDOOR_OUTGOING_TEMPERATURE = "indoor_outgoing_temperature"
+TARGET_TEMPERATURE = "comfort_temperature"
+FAN_MODE = "fan_mode"
+HVAC_MODE = "mode"
 
 SENSOR_DESCRIPTIONS = (
     SensorEntityDescription(
@@ -62,14 +68,14 @@ SENSOR_DESCRIPTIONS = (
         state_class=SensorStateClass.MEASUREMENT,
     ),
     SensorEntityDescription(
-        key="indoor_outgoing_temperature",
+        key=INDOOR_OUTGOING_TEMPERATURE,
         name="Indoor outgoing temperature",
         native_unit_of_measurement=TEMP_CELSIUS,
         device_class=SensorDeviceClass.TEMPERATURE,
         state_class=SensorStateClass.MEASUREMENT,
     ),
     SensorEntityDescription(
-        key="comfort_temperature",
+        key=TARGET_TEMPERATURE,
         name="Target temperature",
         native_unit_of_measurement=TEMP_CELSIUS,
         device_class=SensorDeviceClass.TEMPERATURE,
@@ -132,6 +138,8 @@ NUMBER_DESCRIPTIONS = [
         step=1,
     )
 ]
+
+CLIMATE_DESCRIPTIONS = [ClimateEntityDescription(key="comfoair", name="Comfoair")]
 
 
 STARTUP_MESSAGE = f"""

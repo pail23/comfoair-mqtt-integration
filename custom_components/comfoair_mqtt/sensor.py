@@ -52,7 +52,7 @@ class ComfoairMqttFilterSensor(ComfoairMqttEntity, SensorEntity):
 
     def check_if_filter_change_needed(self, value) -> None:
         """Checks if a filter change is needed and creates an issue."""
-        if value and int(value) == 0:
+        if value and int(value) > 0:
             async_create_issue(
                 self.hass,
                 DOMAIN,
