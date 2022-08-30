@@ -132,10 +132,9 @@ NUMBER_DESCRIPTIONS = [
     NumberEntityDescription(
         key="fan_level",
         name="Fan Level",
-        min_value=1,
-        max_value=4,
+        native_min_value=1,
+        native_max_value=4,
         native_step=1,
-        step=1,
     )
 ]
 

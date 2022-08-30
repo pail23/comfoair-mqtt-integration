@@ -17,19 +17,12 @@ from homeassistant.helpers.aiohttp_client import async_get_clientsession
 from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 
-from .const import (
-    DOMAIN,
-    PLATFORMS,
-    STARTUP_MESSAGE,
-    SUBSCRIBE_TOPIC,
-    TOPIC
-)
+from .const import DOMAIN, PLATFORMS, STARTUP_MESSAGE, SUBSCRIBE_TOPIC, TOPIC
 
 
 SCAN_INTERVAL = timedelta(seconds=30)
 
 _LOGGER: logging.Logger = logging.getLogger(__package__)
-
 
 
 async def async_setup(hass: HomeAssistant, config: Config):
@@ -56,7 +49,6 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry):
     @callback
     def message_received(message):
         """Callback for received mqtt messages"""
-        _LOGGER.warn(f"Message received: {message}")
         sensor_name = message.topic[len(TOPIC) :]
         hass.data[DOMAIN][entry.entry_id][sensor_name] = message.payload
 
