@@ -1,0 +1,20 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "title": "Comfoair",
+                "description": "You have successfully added the Comfoair MQTT device."
+            }
+        },
+
+        "abort": {
+            "single_instance_allowed": "Only a single instance is allowed."
+        }
+    },
+    "issues": {
+        "replace_filters": {
+            "description": "Bitte wechsle die Filter in deinem Comfoair.",
+            "title": "Comfoair Filterwechsel ist notwendig."
+        }
+    }
+}

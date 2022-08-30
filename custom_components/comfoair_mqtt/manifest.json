@@ -1,0 +1,13 @@
+{
+  "domain": "comfoair_mqtt",
+  "name": "Comfoair MQTT",
+  "documentation": "https://github.com/pail23/comfoair-mqtt-integration",
+  "iot_class": "local_push",
+  "issue_tracker": "https://github.com/pail23/comfoair-mqtt-integration/issues",
+  "dependencies": ["mqtt"],
+  "version": "0.0.0",
+  "config_flow": true,
+  "codeowners": [
+    "@pail23"
+  ]
+}
